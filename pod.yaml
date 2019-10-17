@@ -1,0 +1,13 @@
+#Just a sample
+apiVersion: v1 #api specification
+kind: Pod #object type
+metadata: #metadata
+  name: nginx-pod
+  labels: #used to organize subsest of objects
+    app: nginx #label <name>:<value> pair
+spec: #beginning of the desired state config
+  containers:
+  - name: nginx 
+    image: nginx:1.15.11
+    ports:
+    - containerPort: 80

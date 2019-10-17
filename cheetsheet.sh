@@ -2,7 +2,7 @@
 ssh-keygen -t rsa -b 2048 -f c:\Users\<username>\.ssh\key1.pub
 
 #New ssh session to a minikube running on azure
-ssh rlevchenko@<pip> -i c:\Users\<username>\.ssh\key.pub
+ssh rlevchenko@<pip>-i c:\Users\<username>\.ssh\key.pub
 
 #Upgrade the packages
 sudo apt-get update #retrieve new list of packages
@@ -28,3 +28,11 @@ sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.0/
 sudo chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 kubectl version
+
+#Check config and cluster
+kubectl config view
+kubectl cluster-info
+
+#APIs through the proxy
+kubectl proxy
+curl http://127.0.0.1:8001
