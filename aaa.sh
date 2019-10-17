@@ -14,7 +14,7 @@ openssl req -new -key rl.key -out rl.csr -subj "/CN=rl/O=demo"
 cat rl.csr | base64 | tr -d '\n'
 nano signing-request.yaml
 
-*/ Cert request
+/# Cert request
 apiVersion: certificates.k8s.io/v1beta1
 kind: CertificateSigningRequest
 metadata:
@@ -27,7 +27,7 @@ spec:
   - digital signature
   - key encipherment
   - client auth
-*/ End of request
+#/ End of request
 
 #Create a signing object
 kubectl create -f signing-request.yaml
@@ -52,7 +52,7 @@ kubectl --context=rl-context get pods #should generate an error
 #Create a role
 nano role.yaml
 
-/#
+/# Begin
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -62,7 +62,7 @@ rules:
 - apiGroups: [""]
   resources: ["pods"]
   verbs: ["get", "watch", "list"]
-#/
+#/ End
 
 kubectl create -f role.yaml
 kubectl -n demo get roles
@@ -70,7 +70,7 @@ kubectl -n demo get roles
 #Bind the role to user
 nano rolebinding.yaml
 
-/#
+/# Begin
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -84,9 +84,10 @@ roleRef:
   kind: Role
   name: pod-reader
   apiGroup: rbac.authorization.k8s.io
-#/
+#/ End
 
 kubectl create -f rolebinding.yaml
 kubectl -n demo get rolebindings
+
 #Verification
 kubectl --context=rl-context get pods
