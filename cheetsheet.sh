@@ -9,3 +9,4 @@ sudo apt-get update #retrieve new list of packages
 sudo apt-get upgrade #perform an upgrade
 sudo apt-get dist-upgrade #distribution upgrage (resolves any conflicts)
 
+#
