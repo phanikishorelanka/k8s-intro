@@ -1,2 +1,1 @@
-# k8s-intro
-Kubernetes Introduction Course | My notes
+# Kubernetes Introduction Course (my notes)
