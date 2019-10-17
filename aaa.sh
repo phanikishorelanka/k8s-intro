@@ -1,3 +1,7 @@
+#Start your minikube with enabled RBAC if necessary
+minikube start --extra-config=apiserver.Authorization.Mode=RBAC
+kubectl api-versions
+
 #Get the k8s config's content
 kubectl config view
 
