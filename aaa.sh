@@ -8,7 +8,7 @@ kubectl config view
 #Create a new namespace
 kubectl create namespace demo
 
-#Make a new directory
+#Make a new directory to store certs
 mkdir rbac
 cd rbac/
 
