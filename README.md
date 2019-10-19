@@ -1,5 +1,7 @@
 # Kubernetes Introduction Course (my notes)
 
+Prerequisites: k8s or minikube (or AKS/EKS), kubectl, ubuntu
+
 pod.yaml - sample of pod configuration
 cheetsheet.sh - cheat sheet with kubectl/minikube commands
 deployments. sh - deployments and update/rollout commands
