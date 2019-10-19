@@ -14,4 +14,4 @@ Prerequisites: k8s or minikube (or AKS/EKS), kubectl, ubuntu
 - app | liveness.yaml - pod configuration with a liveness probe (tcp/http/cmd)
 - app | readiness.yaml - pod configuration with a readiness probe
 - app | sheet.sh - kubectl command to interact with pods/services/deployments
-- app | webserver.yaml - simple pod configuration example
+- app | webserver.yaml - pod configuration sample
