@@ -1,6 +1,6 @@
 # Kubernetes Introduction Course (my notes)
 
-This repo can be as a source code of the Introduction to Kubernetes course
+This repo can be used as a source code of the Introduction to Kubernetes course
 
 Prerequisites: k8s or minikube (or AKS/EKS), kubectl, ubuntu
 
