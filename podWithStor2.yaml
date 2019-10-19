@@ -1,0 +1,20 @@
+#Just a sample of POD with storage volume
+apiVersion: v1 #api specification
+kind: Pod #object type
+metadata: #metadata
+  name: nginx-pod
+  labels: #used to organize subsest of objects
+    app: nginx #label <name>:<value> pair
+spec: #beginning of the desired state config
+  volumes:
+  - name: host-volume
+    hostPath: # volume type
+      path: /home/rlevchenko/pod-volume #directory on the minikube VM
+  containers:
+  - name: nginx 
+    image: nginx:1.15.11
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html
+      name: host-volume
