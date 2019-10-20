@@ -7,6 +7,7 @@ Prerequisites: k8s or minikube (or AKS/EKS), kubectl, ubuntu
 - pod.yaml - sample of pod configuration
 - cheetsheet.sh - cheat sheet with kubectl/minikube commands
 - deployments. sh - deployments and update/rollout commands
+- ingress.yaml - fanout and virtual host ingress samples
 - persstor.sh - commands to create a pod with pers.storage
 - podWithStor.yaml - creates a pod to show pers.storage in action
 - podWithStor2.yaml - create a second pod to show pers.storage in action

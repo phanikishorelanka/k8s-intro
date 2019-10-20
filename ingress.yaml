@@ -1,0 +1,41 @@
+#Virtual Host Ingress
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: virtual-host-ingress
+  namespace: default
+spec:
+  rules:
+  - host: site1.company.com
+    http:
+      paths:
+      - backend:
+          serviceName: webserver-site1
+          servicePort: 80
+  - host: site2.company.com
+    http:
+      paths:
+      - backend:
+          serviceName: webserver-site2
+          servicePort: 80
+---
+
+#Fanout ingress
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: fanout-ingress
+  namespace: default
+spec:
+  rules:
+  - host: company.com
+    http:
+      paths:
+      - path: /site1
+        backend:
+          serviceName: webserver-site1
+          servicePort: 80
+      - path: /site2
+        backend:
+          serviceName: webserver-site2
+          servicePort: 80

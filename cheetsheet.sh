@@ -47,3 +47,7 @@ kubectl create secret generic my-file-password --from-file=pass.txt
 kubectl get secret my-password
 kubectl describe secret my-password
 
+#Enable Ingress on minikube
+minikube addons enable ingress
+kubectl create -f ingress.yaml
+kubectl get ingress
