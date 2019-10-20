@@ -36,3 +36,14 @@ kubectl cluster-info
 #APIs through the proxy
 kubectl proxy
 curl http://127.0.0.1:8001
+
+#Create a ConfigMap
+kubectl create configmap my-config --from-literal=key1=value1 --from-literal=key2=value2
+kubectl get configmaps my-config -o yaml
+
+#Create a Secret
+kubectl create secret generic my-password --from-literal=password=P@ssword1
+kubectl create secret generic my-file-password --from-file=pass.txt
+kubectl get secret my-password
+kubectl describe secret my-password
+
